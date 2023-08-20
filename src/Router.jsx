@@ -12,6 +12,12 @@ import {
 //importing routes
 import Homepage from "./routes/Homepage";
 
+const theme = {
+    black: "#0B0D17",
+    gray: "#D0D6F9",
+    white: "#FFFFFF",
+}
+
 
 
 const Router = () => {
@@ -24,7 +30,7 @@ const Router = () => {
     ])
 
     return (
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
             <GlobalStyle />
             <Container>
                 <RouterProvider router={router} />

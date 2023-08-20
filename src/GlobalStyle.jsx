@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     body,
     html {
         min-height: 100vh;
+        background-color: ${props => props.theme.black};
+        color: ${props => props.theme.white};
     }
 
     Link {
