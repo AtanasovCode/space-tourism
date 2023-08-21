@@ -47,6 +47,10 @@ const Navigation = styled.nav`
     padding: calc(25rem / 16);
     padding-bottom: 0;
     margin-bottom: calc(48rem / 16);
+
+    @media (min-width: 768px) {
+        margin-bottom: calc(106rem / 16);
+    }
 `;
 
 const CloseIcon = styled.img`
@@ -56,6 +60,11 @@ const CloseIcon = styled.img`
     top: 33px;
     right: 26px;
     cursor: pointer;
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 `;
 
 const NavItems = styled.div`
@@ -70,6 +79,7 @@ const NavItems = styled.div`
     height: 100%;
     //width: 254px;
     width: 68%;
+    max-width: calc(300rem / 16);
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40.774227142333984px);
     z-index: 10;
@@ -79,6 +89,20 @@ const NavItems = styled.div`
     ${props => props.open && `
         transform: translateX(0);
     `}
+
+    @media (min-width: 768px) {
+        transform: translateX(0);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(40.774227142333984px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        height: auto;
+        max-width: calc(450rem / 16);
+        width: calc(450rem / 16);
+        padding: calc(40rem / 16) calc(48rem / 16);
+    }
 `;
 
 const NavItem = styled.div`
@@ -86,6 +110,10 @@ const NavItem = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: calc(32rem / 16);
+
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+\    }
 `;
 
 const NavNumber = styled.span`
@@ -97,6 +125,11 @@ const NavNumber = styled.span`
     line-height: normal;
     letter-spacing: 2.7px;
     margin-right: calc(11rem / 16);
+    display: span;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 `;
 
 const NavName = styled.span`
@@ -107,6 +140,12 @@ const NavName = styled.span`
     font-weight: 400;
     line-height: normal;
     letter-spacing: 2.7px;
+
+    @media (min-width: 768px) {
+        color: #FFF;
+        font-size: 14px;
+        letter-spacing: 2.362px;
+    }
 `;
 
 const Logo = styled.img`
@@ -119,4 +158,9 @@ const Menu = styled.img`
     width: 24px;
     height: 21px;
     cursor: pointer;
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 `;

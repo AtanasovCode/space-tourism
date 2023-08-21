@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-import backgroundBottom from '../assets/images/home-mobile-bg.png';
-import background from '../assets/images/background.png';
+import backgroundBottomMobile from '../assets/images/home-mobile-bg.png';
+import backgroundBottomTablet from '../assets/images/home-tablet-bg.png';
+import backgroundTopMobile from '../assets/images/background-top-mobile.png';
+import backgroundTopTablet from '../assets/images/background-top-tablet.png';
 
 
 //importing components
@@ -49,10 +51,14 @@ const Heading = styled.div`
     align-items: center;
     justify-content: center;
     color: ${props => props.theme.white};
-    padding: calc(20rem / 16);
+    padding: calc(30rem / 16);
     padding-top: 0;
-    background: url(${background}), lightgray 0px 0px / 100% 100% no-repeat;
+    background: url(${backgroundTopMobile});
     mix-blend-mode: screen;
+
+    @media (min-width: 768px) {
+        background: url(${backgroundTopTablet});
+    }
 `;
 
 const Title = styled.div`
@@ -65,6 +71,11 @@ const Title = styled.div`
     line-height: normal;
     letter-spacing: 2.7px;
     margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+        letter-spacing: 3.375px;
+    }
 `;
 
 const Space = styled.div`
@@ -76,6 +87,11 @@ const Space = styled.div`
     font-weight: 400;
     line-height: 100px; /* 125% */
     margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 150px;
+        line-height: 150px;
+    }
 `;
 
 const Subtitle = styled.div`
@@ -86,6 +102,12 @@ const Subtitle = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 25px; /* 166.667% */
+    max-width: calc(444rem / 16);
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        line-height: 28px; /* 175% */
+    }
 `;
 
 const Explore = styled.div`
@@ -106,6 +128,13 @@ const Explore = styled.div`
     letter-spacing: 1.25px;
     text-transform: uppercase;
     cursor: pointer;
+
+    @media (min-width: 768px) {
+        width: 242px;
+        height: 242px;
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
 `;
 
 
@@ -120,6 +149,10 @@ const ImageBackground = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    background: url(${backgroundBottom}) lightgray 0px 0px / 100% 100% no-repeat;
+    background: url(${backgroundBottomMobile}) lightgray 0px 0px / 100% 100% no-repeat;
     mix-blend-mode: screen;
+
+    @media (min-width: 768px) {
+        background: url(${backgroundBottomTablet}) lightgray 0px 0px / 100% 100% no-repeat;
+    }
 `; 
