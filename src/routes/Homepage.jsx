@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import backgroundBottomMobile from '../assets/images/home-mobile-bg.png';
 import backgroundBottomTablet from '../assets/images/home-tablet-bg.png';
+import backgroundBottomDesktop from '../assets/images/home-desktop-bg.png';
 import backgroundTopMobile from '../assets/images/background-top-mobile.png';
 import backgroundTopTablet from '../assets/images/background-top-tablet.png';
 
@@ -43,6 +44,12 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
 `;
 
 const Heading = styled.div`
@@ -137,8 +144,6 @@ const Explore = styled.div`
     }
 `;
 
-
-
 const ImageBackground = styled.div`
     position: absolute;
     bottom: 0;
@@ -154,5 +159,16 @@ const ImageBackground = styled.div`
 
     @media (min-width: 768px) {
         background: url(${backgroundBottomTablet}) lightgray 0px 0px / 100% 100% no-repeat;
+    }
+
+    @media (min-width: 1024px) {
+        background: url(${backgroundBottomDesktop}) lightgray 0px 0px / 100% 100% no-repeat;
+        top: 0;
+        left: auto;
+        right: 0;
+        height: 100vh;
+        padding-bottom: 0;
+        align-items: center;
+        justify-content: center;
     }
 `; 

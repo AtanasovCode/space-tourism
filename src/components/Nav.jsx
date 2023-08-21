@@ -50,6 +50,13 @@ const Navigation = styled.nav`
 
     @media (min-width: 768px) {
         margin-bottom: calc(106rem / 16);
+        padding: 0;
+    }
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: calc(40rem / 16);
+        left: 0;
     }
 `;
 
@@ -91,6 +98,7 @@ const NavItems = styled.div`
     `}
 
     @media (min-width: 768px) {
+        position: relative;
         transform: translateX(0);
         background: rgba(255, 255, 255, 0.04);
         backdrop-filter: blur(40.774227142333984px);
@@ -102,6 +110,14 @@ const NavItems = styled.div`
         max-width: calc(450rem / 16);
         width: calc(450rem / 16);
         padding: calc(40rem / 16) calc(48rem / 16);
+    }
+
+    @media (min-width: 1024px) {
+        position: relative;
+        width: calc(850rem / 16);
+        max-width: calc(850rem / 16);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(40.774227142333984px);
     }
 `;
 
@@ -130,6 +146,10 @@ const NavNumber = styled.span`
     @media (min-width: 768px) {
         display: none;
     }
+
+    @media (min-width: 1024px) {
+        display: block;
+    }
 `;
 
 const NavName = styled.span`
@@ -146,12 +166,25 @@ const NavName = styled.span`
         font-size: 14px;
         letter-spacing: 2.362px;
     }
+
+    @media (min-width: 1024px) {
+        font-size: 16px;
+    }
 `;
 
 const Logo = styled.img`
     width: 40px;
     height: 40px;
     cursor: pointer;
+
+    @media (min-width: 768px) {
+        margin: calc(25rem / 16);
+    }
+
+    @media (min-width: 1024px) {
+        width: 48px;
+        height: 48px;
+    }
 `;
 
 const Menu = styled.img`
