@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         background-color: ${props => props.theme.black};
         color: ${props => props.theme.white};
+        font-size: 16px;
     }
 
     Link {

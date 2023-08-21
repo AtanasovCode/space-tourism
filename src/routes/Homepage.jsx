@@ -49,7 +49,8 @@ const Heading = styled.div`
     align-items: center;
     justify-content: center;
     color: ${props => props.theme.white};
-    padding: 0 20px 20px 20px;
+    padding: calc(20rem / 16);
+    padding-top: 0;
     background: url(${background}), lightgray 0px 0px / 100% 100% no-repeat;
     mix-blend-mode: screen;
 `;
@@ -63,7 +64,7 @@ const Title = styled.div`
     font-weight: 400;
     line-height: normal;
     letter-spacing: 2.7px;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 `;
 
 const Space = styled.div`
@@ -74,7 +75,7 @@ const Space = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 100px; /* 125% */
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 `;
 
 const Subtitle = styled.div`
