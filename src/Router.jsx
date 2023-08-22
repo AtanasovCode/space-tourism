@@ -11,6 +11,7 @@ import {
 
 //importing routes
 import Homepage from "./routes/Homepage";
+import Destination from "./routes/Destination";
 
 const theme = {
     black: "#0B0D17",
@@ -27,6 +28,10 @@ const Router = () => {
             path: "/",
             element: <Homepage />
         },
+        {
+            path: "/destinations/:id",
+            element: <Destination />
+        }
     ])
 
     return (

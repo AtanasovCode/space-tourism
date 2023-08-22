@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import mobileBG from '../assets/images/home/background-home-mobile.jpg'
 import tabletBG from '../assets/images/home/background-home-tablet.jpg'
@@ -28,6 +29,9 @@ const Homepage = () => {
                     give you a truly out of this world experience!
                 </Subtitle>
             </Heading>
+            <Explore to="/destinations/moon">
+                Explore
+            </Explore>
         </Container>
     );
 }
@@ -66,7 +70,7 @@ const Heading = styled.div`
 
     @media (min-width: 1024px) {
         padding: calc(15rem / 16);
-        margin: calc(131rem / 16) calc(155rem / 16);
+        margin: calc(115rem / 16) calc(155rem / 16);
     }
 `;
 
@@ -135,16 +139,15 @@ const Subtitle = styled.div`
     }
 `;
 
-const Explore = styled.div`
-    width: 150px;
-    height: 150px;
+const Explore = styled(Link)`
+    width: calc(150rem / 16);
+    height: calc(150rem / 16);
     border-radius: 50%;
     background-color: ${props => props.theme.white};
     display: flex;
     align-items: center;
     justify-content: center;
     color: #0B0D17;
-    text-align: center;
     font-family: Bellefair;
     font-size: 20px;
     font-style: normal;
@@ -153,11 +156,41 @@ const Explore = styled.div`
     letter-spacing: 1.25px;
     text-transform: uppercase;
     cursor: pointer;
+    position: absolute;
+    bottom: calc(48rem / 16);
+    right: 50%;
+    transform: translateX(-50%);
 
     @media (min-width: 768px) {
-        width: 242px;
-        height: 242px;
+        width: calc(242rem / 16);
+        height: calc(242rem / 16);
         font-size: 32px;
         letter-spacing: 2px;
+        bottom: calc(90rem / 16);
+    }
+
+    @media (min-width: 1024px) {
+        width: calc(274rem / 16);
+        height: calc(274rem / 16);
+        transform: translateX(0);
+        bottom: calc(131rem / 16);
+        right: calc(165rem / 16);
+        z-index: 55;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            transition: all .6s ease;
+        }
+
+        &:hover::before {
+            width: 450px;
+            height: 450px;
+            background-color: rgba(255, 255, 255, .2);
+            z-index: -1;
+        }
     }
 `;
