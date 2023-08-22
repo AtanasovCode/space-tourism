@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-import backgroundBottomMobile from '../assets/images/home-mobile-bg.png';
-import backgroundBottomTablet from '../assets/images/home-tablet-bg.png';
-import backgroundBottomDesktop from '../assets/images/home-desktop-bg.png';
-import backgroundTopMobile from '../assets/images/background-top-mobile.png';
-import backgroundTopTablet from '../assets/images/background-top-tablet.png';
+import mobileBG from '../assets/images/home/background-home-mobile.jpg'
+import tabletBG from '../assets/images/home/background-home-tablet.jpg'
+import desktopBG from '../assets/images/home/background-home-desktop.jpg'
+
 
 
 //importing components
@@ -29,9 +28,6 @@ const Homepage = () => {
                     give you a truly out of this world experience!
                 </Subtitle>
             </Heading>
-            <ImageBackground>
-                <Explore>Explore</Explore>
-            </ImageBackground>
         </Container>
     );
 }
@@ -44,11 +40,17 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
 
     @media (min-width: 1024px) {
         flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-end;
+        align-items: flex-end;
+        justify-content: flex-start;
+        background: url(${tabletBG}) no-repeat 0px 0px / 100% 100%;
+    }
+
+    @media (min-width: 1024px) {
+        background: url(${desktopBG}) no-repeat 0px 0px / 100% 100%;
     }
 `;
 
@@ -60,11 +62,11 @@ const Heading = styled.div`
     color: ${props => props.theme.white};
     padding: calc(30rem / 16);
     padding-top: 0;
-    background: url(${backgroundTopMobile});
     mix-blend-mode: screen;
 
-    @media (min-width: 768px) {
-        background: url(${backgroundTopTablet});
+    @media (min-width: 1024px) {
+        padding: calc(15rem / 16);
+        margin: calc(131rem / 16) calc(155rem / 16);
     }
 `;
 
@@ -82,6 +84,14 @@ const Title = styled.div`
     @media (min-width: 768px) {
         font-size: 20px;
         letter-spacing: 3.375px;
+        margin-bottom: calc(24rem / 16);
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 28px;
+        letter-spacing: 4.725px;
+        text-align: left;
+        width: 100%;
     }
 `;
 
@@ -94,10 +104,12 @@ const Space = styled.div`
     font-weight: 400;
     line-height: 100px; /* 125% */
     margin-bottom: 1rem;
+    padding: .7rem 0;
 
     @media (min-width: 768px) {
         font-size: 150px;
         line-height: 150px;
+        margin-bottom: calc(24rem / 16);
     }
 `;
 
@@ -114,6 +126,12 @@ const Subtitle = styled.div`
     @media (min-width: 768px) {
         font-size: 16px;
         line-height: 28px; /* 175% */
+    }
+
+    @media (min-width: 1024px) {
+        text-align: left;
+        font-size: 18px;
+        line-height: 32px;
     }
 `;
 
@@ -143,32 +161,3 @@ const Explore = styled.div`
         letter-spacing: 2px;
     }
 `;
-
-const ImageBackground = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 55%;
-    width: 100%;
-    padding-bottom: 48px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    background: url(${backgroundBottomMobile}) lightgray 0px 0px / 100% 100% no-repeat;
-    mix-blend-mode: screen;
-
-    @media (min-width: 768px) {
-        background: url(${backgroundBottomTablet}) lightgray 0px 0px / 100% 100% no-repeat;
-    }
-
-    @media (min-width: 1024px) {
-        background: url(${backgroundBottomDesktop}) lightgray 0px 0px / 100% 100% no-repeat;
-        top: 0;
-        left: auto;
-        right: 0;
-        height: 100vh;
-        padding-bottom: 0;
-        align-items: center;
-        justify-content: center;
-    }
-`; 
