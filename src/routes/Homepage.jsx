@@ -43,7 +43,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
 
     @media (min-width: 768px) {
@@ -53,7 +53,7 @@ const Container = styled.div`
     @media (min-width: 1024px) {
         flex-direction: row;
         align-items: flex-end;
-        justify-content: flex-start;
+        justify-content: space-between;
         background: url(${desktopBG}) no-repeat 0px 0px / 100% 100%;
         padding-top: 5%;
     }
@@ -156,15 +156,13 @@ const Explore = styled(Link)`
     font-family: Bellefair;
     font-size: 20px;
     font-style: normal;
+    text-decoration: none;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 1.25px;
     text-transform: uppercase;
     cursor: pointer;
-    position: absolute;
-    bottom: calc(48rem / 16);
-    right: 50%;
-    transform: translateX(-50%);
+    margin-bottom: calc(48rem / 16);
 
     @media (min-width: 768px) {
         width: calc(242rem / 16);
@@ -172,29 +170,30 @@ const Explore = styled(Link)`
         font-size: 32px;
         letter-spacing: 2px;
         bottom: calc(90rem / 16);
+        z-index: 10;
     }
 
     @media (min-width: 1024px) {
         width: calc(274rem / 16);
         height: calc(274rem / 16);
-        transform: translateX(0);
-        bottom: calc(131rem / 16);
-        right: calc(165rem / 16);
-        z-index: 55;
+        position: absolute;
+        bottom: 9%;
+        right: 11%;
 
         &::before {
             content: '';
             position: absolute;
-            width: 0;
-            height: 0;
+            width: calc(274rem / 16);
+            height: calc(274rem / 16);
             border-radius: 50%;
-            transition: all .6s ease;
+            transition: all .3s linear;
         }
 
         &:hover::before {
-            width: 450px;
-            height: 450px;
-            background-color: rgba(255, 255, 255, .2);
+            width: calc(450rem / 16);
+            height: calc(450rem / 16);
+            background-color: #FFFFFF;
+            opacity: 0.1036;
             z-index: -1;
         }
     }
