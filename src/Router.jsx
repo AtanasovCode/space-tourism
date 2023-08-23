@@ -29,7 +29,7 @@ const Router = () => {
             element: <Homepage />
         },
         {
-            path: "/destinations/:id",
+            path: "/destinations",
             element: <Destination />
         }
     ])

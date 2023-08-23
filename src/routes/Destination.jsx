@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
@@ -7,57 +7,121 @@ import tabletBG from '../assets/images/destination/background-destination-tablet
 import desktopBG from '../assets/images/destination/background-destination-desktop.jpg';
 
 import moon from '../assets/images/destination/image-moon.png';
+import mars from '../assets/images/destination/image-mars.png';
+import europa from '../assets/images/destination/image-europa.png';
+import titan from '../assets/images/destination/image-titan.png';
+
 
 
 import Nav from "../components/Nav";
 
 const Destination = () => {
 
-    const [destination, setDestination] = useState("moon");
-    const [description, setDescription] = useState();
+    const [destinations, setDestinations] = useState([
+        {
+            name: "moon",
+            description: "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+            duration: "3 days",
+            distance: "384,400 km",
+            url: moon,
+        },
+        {
+            name: "mars",
+            description: "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
+            duration: "9 months",
+            distance: "225 MIL. km",
+            url: mars,
+        },
+        {
+            name: "europa",
+            description: "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
+            duration: "3 years",
+            distance: "628 MIL. km",
+            url: europa,
+        },
+        {
+            name: "titan",
+            description: "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
+            duration: "7 years",
+            distance: "1.6 BIL. km",
+            url: titan,
+        },
+    ]);
+    const [chosenDestination, setChosenDestination] = useState("moon");
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [image, setImage] = useState();
     const [distance, setDistance] = useState("");
-    const [time, setTime] = useState();
+    const [duration, setDuration] = useState("");
+
+    useEffect(() => {
+        destinations.map((destination) => {
+            if (destination.name === chosenDestination) {
+                setName(destination.name);
+                setDescription(destination.description);
+                setImage(destination.url);
+                setDuration(destination.duration);
+                setDistance(destination.distance);
+            }
+        })
+    }, [chosenDestination])
 
     return (
         <Container>
             <Nav />
-            
+
             <ImageContainer>
                 <Heading>
                     <Number>01</Number>
                     <Title>Pick your destination</Title>
                 </Heading>
-                <DestinationImage src={moon} />
+                <DestinationImage src={image} />
             </ImageContainer>
 
             <TextContainer>
                 <Choices>
-                    <Choice active={destination === "moon" && true}>Moon</Choice>
-                    <Choice active={destination === "mars" && true}>Mars</Choice>
-                    <Choice active={destination === "europa" && true}>Europa</Choice>
-                    <Choice active={destination === "titan" && true}>Titan</Choice>
+                    <Choice
+                        active={chosenDestination === "moon" && true}
+                        onClick={() => setChosenDestination("moon")}
+                    >
+                        Moon
+                    </Choice>
+                    <Choice
+                        active={chosenDestination === "mars" && true}
+                        onClick={() => setChosenDestination("mars")}
+                    >
+                        Mars
+                    </Choice>
+                    <Choice
+                        active={chosenDestination === "europa" && true}
+                        onClick={() => setChosenDestination("europa")}
+                    >
+                        Europa
+                    </Choice>
+                    <Choice
+                        active={chosenDestination === "titan" && true}
+                        onClick={() => setChosenDestination("titan")}
+                    >
+                        Titan
+                    </Choice>
                 </Choices>
 
                 <DestinationChosen>
-                    Moon
+                    {name}
                 </DestinationChosen>
 
                 <DestinationDescription>
-                    See our planet as you’ve never seen it before.
-                    A perfect relaxing trip away to help regain
-                    perspective and come back refreshed. While
-                    you’re there, take in some history by
-                    visiting the Luna 2 and Apollo 11 landing sites.
+                    {description}
                 </DestinationDescription>
 
                 <StatsContainer>
                     <DestinationStats>
                         <StatsTitle>Avg. Distance</StatsTitle>
-                        <StatNumber>384,400 km</StatNumber>
+                        <StatNumber> {distance} </StatNumber>
                     </DestinationStats>
                     <DestinationStats>
                         <StatsTitle>Est. travel time</StatsTitle>
-                        <StatNumber>3 days</StatNumber>
+                        <StatNumber>{duration}</StatNumber>
                     </DestinationStats>
                 </StatsContainer>
             </TextContainer>
@@ -218,14 +282,17 @@ const Choice = styled.div`
     line-height: normal;
     letter-spacing: 2.362px;
     text-transform: uppercase;
+    padding-bottom: calc(8rem / 16);
+    cursor: pointer;
 
     ${props => props.active && `
-        border-bottom: 2px solid #fff;
+        border-bottom: 3px solid #fff;
     `}
 
     @media (min-width: 768px) {
         font-size: 16px;
         letter-spacing: 2.7px;
+        padding-bottom: calc(12rem / 16);
     }
 `;
 

@@ -29,7 +29,7 @@ const Homepage = () => {
                     give you a truly out of this world experience!
                 </Subtitle>
             </Heading>
-            <Explore to="/destinations/moon">
+            <Explore to="/destinations">
                 Explore
             </Explore>
         </Container>
@@ -46,15 +46,16 @@ const Container = styled.div`
     justify-content: flex-start;
     background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
 
-    @media (min-width: 1024px) {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: flex-start;
+    @media (min-width: 768px) {
         background: url(${tabletBG}) no-repeat 0px 0px / 100% 100%;
     }
 
     @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-start;
         background: url(${desktopBG}) no-repeat 0px 0px / 100% 100%;
+        padding-top: 5%;
     }
 `;
 
