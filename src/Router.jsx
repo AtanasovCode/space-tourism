@@ -1,12 +1,13 @@
 //importing global stlyes
+import { useState } from "react";
 import { GlobalStyle } from "./GlobalStyle";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 
 //importing from react-router
-import { 
-    createBrowserRouter, 
-    RouterProvider 
+import {
+    createBrowserRouter,
+    RouterProvider
 } from "react-router-dom";
 
 //importing routes
@@ -23,16 +24,20 @@ const theme = {
 
 const Router = () => {
 
+
+    //used to determine the currently active tab
+    const [activeTab, setActiveTab] = useState("home");
+
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Homepage />
+            element: <Homepage activeTab={activeTab} />
         },
         {
             path: "/destinations",
-            element: <Destination />
+            element: <Destination activeTab={activeTab}  />
         }
-    ])
+    ]);
 
     return (
         <ThemeProvider theme={theme}>

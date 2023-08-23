@@ -1,11 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 import logo from '../assets/logo.svg';
 import menu from '../assets/icons/menu.svg';
 import close from '../assets/icons/close.svg';
 
-const Nav = () => {
+const Nav = ({
+    activeTab
+}) => {
 
     const [open, setOpen] = useState(false);
 
@@ -14,19 +17,32 @@ const Nav = () => {
             <Logo src={logo} alt="logo" />
             <NavItems open={open}>
                 <CloseIcon src={close} alt="close icon" onClick={() => setOpen(false)} />
-                <NavItem>
+                <NavItem
+                    to="/"
+                    $active={({ isActive }) => (isActive ? true : false)}
+
+                >
                     <NavNumber>00</NavNumber>
                     <NavName>Home</NavName>
                 </NavItem>
-                <NavItem>
+                <NavItem
+                    to="/destinations"
+                    $active={({ isActive }) => (isActive ? true : false)}
+                >
                     <NavNumber>01</NavNumber>
                     <NavName>Destination</NavName>
                 </NavItem>
-                <NavItem>
+                <NavItem
+                    to="/crew"
+                    $active={({ isActive }) => (isActive ? true : false)}
+                >
                     <NavNumber>02</NavNumber>
                     <NavName>Crew</NavName>
                 </NavItem>
-                <NavItem>
+                <NavItem
+                    to="/technology"
+                    $active={({ isActive }) => (isActive ? true : false)}
+                >
                     <NavNumber>03</NavNumber>
                     <NavName>Technology</NavName>
                 </NavItem>
@@ -119,11 +135,32 @@ const NavItems = styled.div`
     }
 `;
 
-const NavItem = styled.div`
+const NavItem = styled(NavLink)`
+    text-decoration: none;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: calc(32rem / 16);
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: calc(-40rem / 16);
+        transition: all .3s ease;
+        background-color: ${props => props.$active && "#FFF"}
+    }
+
+    &:hover::before {
+        ${props => !props.$active && `
+            background-color: #fff;
+            opacity: 0.5021;
+        `}
+    }
 
     @media (min-width: 768px) {
         margin-bottom: 0;
