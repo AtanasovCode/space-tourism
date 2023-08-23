@@ -68,6 +68,10 @@ const Heading = styled.div`
     padding-top: 0;
     mix-blend-mode: screen;
 
+    @media (min-width: 768px) {
+        margin-top: calc(106rem / 16);
+    }
+
     @media (min-width: 1024px) {
         padding: calc(15rem / 16);
         margin: calc(115rem / 16) calc(155rem / 16);

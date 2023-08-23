@@ -45,11 +45,9 @@ const Navigation = styled.nav`
     align-items: center;
     justify-content: space-between;
     padding: calc(25rem / 16);
-    padding-bottom: 0;
     margin-bottom: calc(48rem / 16);
 
     @media (min-width: 768px) {
-        margin-bottom: calc(106rem / 16);
         padding: 0;
     }
 
