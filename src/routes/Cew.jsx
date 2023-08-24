@@ -68,29 +68,33 @@ const Crew = () => {
     return (
         <Container>
             <PageContainer>
-                <Nav />
+                <Nav crew={true} />
+
                 <Heading>
                     <TitleNumber>02</TitleNumber>
                     <Title>Meet your crew</Title>
                 </Heading>
-                <ImageContainer>
-                    <CrewImage src={image} alt="image from the crew" />
-                </ImageContainer>
 
-                <TextContainer>
-                    <Choices>
-                        <Choice $active={choice === 1 && true} onClick={() => setChoice(1)}></Choice>
-                        <Choice $active={choice === 2 && true} onClick={() => setChoice(2)}></Choice>
-                        <Choice $active={choice === 3 && true} onClick={() => setChoice(3)}></Choice>
-                        <Choice $active={choice === 4 && true} onClick={() => setChoice(4)}></Choice>
-                    </Choices>
+                <ContentContainer>
+                    <ImageContainer>
+                        <CrewImage src={image} alt="image from the crew" />
+                    </ImageContainer>
 
-                    <Info>
-                        <Rank> {rank} </Rank>
-                        <Name> {name} </Name>
-                        <Description> {description} </Description>
-                    </Info>
-                </TextContainer>
+                    <TextContainer>
+                        <Choices>
+                            <Choice $active={choice === 1 && true} onClick={() => setChoice(1)}></Choice>
+                            <Choice $active={choice === 2 && true} onClick={() => setChoice(2)}></Choice>
+                            <Choice $active={choice === 3 && true} onClick={() => setChoice(3)}></Choice>
+                            <Choice $active={choice === 4 && true} onClick={() => setChoice(4)}></Choice>
+                        </Choices>
+
+                        <Info>
+                            <Rank> {rank} </Rank>
+                            <Name> {name} </Name>
+                            <Description> {description} </Description>
+                        </Info>
+                    </TextContainer>
+                </ContentContainer>
             </PageContainer>
             <Tint />
         </Container>
@@ -106,6 +110,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: flex-start;
     background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
+    overflow-x: hidden;
 `;
 
 const Tint = styled.div`
@@ -125,6 +130,10 @@ const PageContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
     z-index: 5;
+
+    @media (min-width: 768px) {
+        margin-top: calc(96rem / 16 + 40rem / 16);
+    }
 `;
 
 const Heading = styled.div`
@@ -132,6 +141,13 @@ const Heading = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
+
+    @media (min-width: 768px) {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: calc(38rem / 16);
+        margin-bottom: calc(60rem / 16);
+    }
 `;
 
 const TitleNumber = styled.span`
@@ -144,6 +160,11 @@ const TitleNumber = styled.span`
     letter-spacing: 2.7px;
     opacity: 0.25;
     margin-right: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+        letter-spacing: 3.375px;
+    }
 `;
 
 const Title = styled.span`
@@ -155,6 +176,22 @@ const Title = styled.span`
     line-height: normal;
     letter-spacing: 2.7px;
     text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+        letter-spacing: 3.375px;
+    }
+`;
+
+const ContentContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+        flex-direction: column-reverse;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -163,11 +200,18 @@ const ImageContainer = styled.div`
     justify-content: center;
     width: 100%;
     margin-bottom: 2rem;
+
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
 `;
 
 const CrewImage = styled.img`
-    width: 177.123px;
     height: 222px;
+
+    @media (min-width: 768px) {
+        height: 532px;
+    }
 `;
 
 const TextContainer = styled.div`
@@ -175,6 +219,10 @@ const TextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 768px) {
+        flex-direction: column-reverse;
+    }
 `;
 
 const Choices = styled.div`
@@ -183,6 +231,10 @@ const Choices = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
+
+    @media (min-width: 768px) {
+        margin-bottom: 2.5rem;
+    }
 `;
 
 
@@ -218,6 +270,11 @@ const Rank = styled.div`
     text-transform: uppercase;
     margin-bottom: .5rem;
     opacity: 0.4951;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
+        opacity: 0.4994;
+    }
 `;
 
 const Name = styled.div`
@@ -230,6 +287,10 @@ const Name = styled.div`
     line-height: normal;
     text-transform: uppercase;
     margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 40px;
+    }
 `;
 
 const Description = styled.div`
@@ -241,4 +302,11 @@ const Description = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 25px; /* 166.667% */
+
+    @media (min-width: 768px) {
+        line-height: 28px; /* 175% */
+        font-size: 16px;
+        max-width: calc(458rem / 16);
+        margin-bottom: 2.5rem;
+    }
 `;

@@ -7,13 +7,14 @@ import menu from '../assets/icons/menu.svg';
 import close from '../assets/icons/close.svg';
 
 const Nav = ({
-    activeTab
+    activeTab,
+    crew,
 }) => {
 
     const [open, setOpen] = useState(false);
 
     return (
-        <Navigation>
+        <Navigation crew={crew}>
             <Logo src={logo} alt="logo" />
             <NavItems open={open}>
                 <CloseIcon src={close} alt="close icon" onClick={() => setOpen(false)} />
@@ -60,6 +61,13 @@ const Navigation = styled.nav`
 
     @media (min-width: 768px) {
         padding: 0;
+
+        /* Used in the crew -age */
+        ${props => props.crew && `
+            position: absolute;
+            top: 0;
+            left: 0;
+        `}
     }
 
     @media (min-width: 1024px) {

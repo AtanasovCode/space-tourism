@@ -317,7 +317,7 @@ const DestinationChosen = styled.div`
 `;
 
 const DestinationDescription = styled.div`
-    olor: #D0D6F9;
+    color: #D0D6F9;
     text-align: center;
     font-family: Barlow;
     font-size: 15px;
