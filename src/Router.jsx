@@ -13,6 +13,7 @@ import {
 //importing routes
 import Homepage from "./routes/Homepage";
 import Destination from "./routes/Destination";
+import Crew from "./routes/Cew";
 
 const theme = {
     black: "#0B0D17",
@@ -36,6 +37,10 @@ const Router = () => {
         {
             path: "/destinations",
             element: <Destination activeTab={activeTab}  />
+        },
+        {
+            path: "/crew",
+            element: <Crew />
         }
     ]);
 

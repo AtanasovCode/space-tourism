@@ -140,24 +140,26 @@ const NavItem = styled(NavLink)`
     cursor: pointer;
     position: relative;
 
-    &.active::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        bottom: calc(-40rem / 16);
-        transition: all .3s ease;
-        background-color: #fff;
-    }
+    @media (min-width: 768px) {
 
-    &:hover::before {
-        ${props => !props.$active && `
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: calc(-40rem / 16);
+            width: 100%;
+            height: 3px;
+            transition: all .3s ease;
+        }
+
+        &.active::before {
+            background-color: #fff;
+        }
+
+        &:hover::before {
             background-color: #fff;
             opacity: 0.5021;
-        `}
-    }
+        }
 
-    @media (min-width: 768px) {
         margin-bottom: 0;
     }
 `;
