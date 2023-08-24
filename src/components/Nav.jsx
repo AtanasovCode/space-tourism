@@ -19,29 +19,24 @@ const Nav = ({
                 <CloseIcon src={close} alt="close icon" onClick={() => setOpen(false)} />
                 <NavItem
                     to="/"
-                    $active={({ isActive }) => (isActive ? true : false)}
-
                 >
                     <NavNumber>00</NavNumber>
                     <NavName>Home</NavName>
                 </NavItem>
                 <NavItem
                     to="/destinations"
-                    $active={({ isActive }) => (isActive ? true : false)}
                 >
                     <NavNumber>01</NavNumber>
                     <NavName>Destination</NavName>
                 </NavItem>
                 <NavItem
                     to="/crew"
-                    $active={({ isActive }) => (isActive ? true : false)}
                 >
                     <NavNumber>02</NavNumber>
                     <NavName>Crew</NavName>
                 </NavItem>
                 <NavItem
                     to="/technology"
-                    $active={({ isActive }) => (isActive ? true : false)}
                 >
                     <NavNumber>03</NavNumber>
                     <NavName>Technology</NavName>
@@ -145,14 +140,14 @@ const NavItem = styled(NavLink)`
     cursor: pointer;
     position: relative;
 
-    &::before {
+    &.active::before {
         content: '';
         position: absolute;
         width: 100%;
         height: 3px;
         bottom: calc(-40rem / 16);
         transition: all .3s ease;
-        background-color: ${props => props.$active && "#FFF"}
+        background-color: #fff;
     }
 
     &:hover::before {
@@ -164,7 +159,7 @@ const NavItem = styled(NavLink)`
 
     @media (min-width: 768px) {
         margin-bottom: 0;
-\    }
+    }
 `;
 
 const NavNumber = styled.span`
