@@ -128,6 +128,10 @@ const ImageContainer = styled.div`
     height: 170px;
     background: url(${props => props.$imageLandscape}) lightgray 0px 0px / 100% 100% no-repeat;
     mix-blend-mode: screen;
+
+    @media (min-width: 768px) {
+        height: 310px;
+    }
 `;
 
 const TextContainer = styled.div`
@@ -143,7 +147,13 @@ const Choices = styled.div`
     justify-content: space-between;
     width: calc(152rem / 16);
     margin-top: 2rem;
-    margin-bottom: calc(50rem / 16);
+    margin-bottom: calc(26rem / 16);
+
+    @media (min-width: 768px) {
+        margin-top: calc(56rem / 16);
+        margin-bottom: calc(44rem / 16);
+        width: calc(210rem / 16);
+    }
 `;
 
 const Choice = styled.div`
@@ -171,6 +181,11 @@ const Choice = styled.div`
         border: none;
         color: #0B0D17;
     `}
+
+    @media (min-width: 768px) {
+        width: 60px;
+        height: 60px;
+    }
 `;
 
 const Info = styled.div`
