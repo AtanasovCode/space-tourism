@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Heading = ({
+const Steps = ({
     number,
     title
 }) => {
@@ -12,7 +12,7 @@ const Heading = ({
     );
 }
 
-export default Heading;
+export default Steps;
 
 const Container = styled.div`
     display: flex;

@@ -14,7 +14,7 @@ import titan from '../assets/images/destination/image-titan.png';
 
 
 import Nav from "../components/Nav";
-import Heading from "../components/Heading";
+import Steps from "../components/Steps";
 
 const Destination = () => {
 
@@ -72,7 +72,7 @@ const Destination = () => {
             <Nav />
 
             <ImageContainer>
-                <Heading number="01" title="Pick your destination" />
+                <Steps number="01" title="Pick your destination" />
                 <DestinationImage src={image} />
             </ImageContainer>
 

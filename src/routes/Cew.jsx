@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 //importing nav
 import Nav from "../components/Nav";
-import Heading from "../components/Heading";
+import Steps from "../components/Steps";
 
 //importing images
 import mobileBG from '../assets/images/crew/background-crew-mobile.jpg';
@@ -71,7 +71,7 @@ const Crew = () => {
             <PageContainer>
                 <Nav crew={true} />
 
-                <Heading number="02" title="meet your crew" />
+                <Steps number="02" title="meet your crew" />
 
                 <ContentContainer>
                     <ImageContainer>
