@@ -14,6 +14,7 @@ import {
 import Homepage from "./routes/Homepage";
 import Destination from "./routes/Destination";
 import Crew from "./routes/Cew";
+import Tech from "./routes/Tech";
 
 const theme = {
     black: "#0B0D17",
@@ -32,15 +33,19 @@ const Router = () => {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Homepage activeTab={activeTab} />
+            element: <Homepage />
         },
         {
             path: "/destinations",
-            element: <Destination activeTab={activeTab}  />
+            element: <Destination />
         },
         {
             path: "/crew",
             element: <Crew />
+        },
+        {
+            path: "/technology",
+            element: <Tech />
         }
     ]);
 
