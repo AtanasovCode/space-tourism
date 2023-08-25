@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 //importing nav
 import Nav from "../components/Nav";
+import Heading from "../components/Heading";
 
 //importing images
 import mobileBG from '../assets/images/crew/background-crew-mobile.jpg';
@@ -70,10 +71,7 @@ const Crew = () => {
             <PageContainer>
                 <Nav crew={true} />
 
-                <Heading>
-                    <TitleNumber>02</TitleNumber>
-                    <Title>Meet your crew</Title>
-                </Heading>
+                <Heading number="02" title="meet your crew" />
 
                 <ContentContainer>
                     <ImageContainer>
@@ -109,8 +107,17 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
+    background: url(${mobileBG}) lightgray no-repeat 0px 0px / 100% 100%;
+    mix-blend-mode: screen;
     overflow-x: hidden;
+
+    @media (min-width: 768px) {
+        background: url(${mobileBG}) lightgray no-repeat 0px 0px / 100% 100%;
+    }
+
+    @media (min-width: 1024px) {
+        background: url(${desktopBG}) lightgray no-repeat 0px 0px / 100% 100%;
+    }
 `;
 
 const Tint = styled.div`
@@ -137,68 +144,6 @@ const PageContainer = styled.div`
 
     @media (min-width: 1024px) {
         margin-top: calc(96rem / 16 + 40rem / 16 + 70rem / 16);
-    }
-`;
-
-const Heading = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-
-    @media (min-width: 768px) {
-        width: 100%;
-        justify-content: flex-start;
-        margin-left: calc(38rem / 16);
-        margin-bottom: calc(60rem / 16);
-    }
-
-    @media (min-width: 1024px) {
-        margin-left: calc(166rem / 16);
-    }
-`;
-
-const TitleNumber = styled.span`
-    color: #FFF;
-    font-family: Barlow Condensed;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2.7px;
-    opacity: 0.25;
-    margin-right: 1rem;
-
-    @media (min-width: 768px) {
-        font-size: 20px;
-        letter-spacing: 3.375px;
-    }
-
-    @media (min-width: 1024px) {
-        font-size: 28px;
-        letter-spacing: 4.725px;
-        margin-right: 1.5rem;
-    }
-`;
-
-const Title = styled.span`
-    color: #FFF;
-    font-family: Barlow Condensed;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 2.7px;
-    text-transform: uppercase;
-
-    @media (min-width: 768px) {
-        font-size: 20px;
-        letter-spacing: 3.375px;
-    }
-
-    @media (min-width: 1024px) {
-        font-size: 28px;
-        letter-spacing: 4.725px;
     }
 `;
 

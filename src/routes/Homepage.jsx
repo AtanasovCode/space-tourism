@@ -44,17 +44,18 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
+    background: url(${mobileBG}) lightgray no-repeat 0px 0px / 100% 100%;
+    mix-blend-mode: screen;
 
     @media (min-width: 768px) {
-        background: url(${tabletBG}) no-repeat 0px 0px / 100% 100%;
+        background: url(${tabletBG}) lightgray  no-repeat 0px 0px / 100% 100%;
     }
 
     @media (min-width: 1024px) {
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-between;
-        background: url(${desktopBG}) no-repeat 0px 0px / 100% 100%;
+        background: url(${desktopBG}) lightgray no-repeat 0px 0px / 100% 100%;
         padding-top: 5%;
     }
 `;

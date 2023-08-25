@@ -14,6 +14,7 @@ import titan from '../assets/images/destination/image-titan.png';
 
 
 import Nav from "../components/Nav";
+import Heading from "../components/Heading";
 
 const Destination = () => {
 
@@ -71,10 +72,7 @@ const Destination = () => {
             <Nav />
 
             <ImageContainer>
-                <Heading>
-                    <Number>01</Number>
-                    <Title>Pick your destination</Title>
-                </Heading>
+                <Heading number="01" title="Pick your destination" />
                 <DestinationImage src={image} />
             </ImageContainer>
 
@@ -136,7 +134,8 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
+    background: url(${mobileBG}) lightgray no-repeat 0px 0px / 100% 100%;
+    mix-blend-mode: screen;
     min-height: 100vh;
 
     @media (min-width: 768px) {
@@ -166,66 +165,6 @@ const ImageContainer = styled.div`
     }
 `;
 
-const Heading = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: calc(32rem / 16);
-
-    @media (min-width: 768px) {
-        width: 100%;
-        justify-content: flex-start;
-        padding-left: calc(38rem / 16);
-        margin-bottom: calc(60rem / 16);
-    }
-
-    @media (min-width: 1024px) {
-        margin-bottom: calc(97rem / 16);
-    }
-`;
-
-const Number = styled.span`
-    color: #FFF;
-    font-family: Barlow Condensed;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2.7px;
-    opacity: .25;
-    margin-right: calc(18rem / 16);
-
-    @media (min-width: 768px) {
-        font-size: 20px;
-        letter-spacing: 3.375px;
-    }
-
-    @media (min-width: 1024px) {
-        font-size: 28px;
-        letter-spacing: 4.725px;
-    }
-`;
-
-const Title = styled.span`
-    color: #FFF;
-    font-family: Barlow Condensed;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 2.7px;
-    text-transform: uppercase;
-
-    @media (min-width: 768px) {
-        font-size: 20px;
-        letter-spacing: 3.375px;
-    }
-
-    @media (min-width: 1024px) {
-        font-size: 28px;
-        letter-spacing: 4.725px;
-    }
-`;
 
 const DestinationImage = styled.img`
     width: calc(170rem / 16);
