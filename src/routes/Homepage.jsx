@@ -45,7 +45,6 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
-    mix-blend-mode: screen;
 
     @media (min-width: 768px) {
         background: url(${tabletBG})  no-repeat 0px 0px / 100% 100%;
