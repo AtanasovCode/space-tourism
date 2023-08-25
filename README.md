@@ -1,8 +1,17 @@
-# React + Vite
+# Space Tourism Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a website build based on a Figma design provided by frontendmentor.io.
 
-Currently, two official plugins are available:
+It contains 4 different pages:
+- Home
+- Destination
+- Crew
+- Technology
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built with:
+
+- Reactjs
+- styled-components
+- react-router-dom
+- HTML5
+- CSS3
