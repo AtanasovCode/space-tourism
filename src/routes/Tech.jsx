@@ -114,6 +114,16 @@ const Container = styled.div`
     background: url(${mobileBG}) lightgray no-repeat 0px 0px / 100% 100%;
     mix-blend-mode: screen;
     min-height: 100vh;
+    overflow-x: hidden;
+
+    @media (min-width: 768px) {
+        background: url(${tabletBG}) lightgray no-repeat 0px 0px / 100% 100%;
+    }
+
+    @media (min-width: 1024px) {
+        background: url(${desktopBG}) lightgray no-repeat 0px 0px / 100% 100%;
+        padding-top: calc(96rem / 16 + 40rem / 16 + 70rem / 16);
+    }
 `;
 
 const ContentContainer = styled.div`
@@ -121,6 +131,14 @@ const ContentContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    @media (min-width: 1024px) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-left: calc(166rem / 16);
+        padding-bottom: 6rem;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -132,6 +150,12 @@ const ImageContainer = styled.div`
     @media (min-width: 768px) {
         height: 310px;
     }
+
+    @media (min-width: 1024px) {
+        flex: 60%;
+        height: 527px;
+        background: url(${props => props.$imagePortrait}) lightgray 0px 0px / 100% 100% no-repeat;
+    }
 `;
 
 const TextContainer = styled.div`
@@ -139,6 +163,12 @@ const TextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        flex: 100%;
+        margin-right: 6rem;
+    }
 `;
 
 const Choices = styled.div`
@@ -153,6 +183,13 @@ const Choices = styled.div`
         margin-top: calc(56rem / 16);
         margin-bottom: calc(44rem / 16);
         width: calc(210rem / 16);
+    }
+
+    @media (min-width: 1024px) {
+        flex-direction: column;
+        width: auto;
+        margin: 0;
+        margin-right: calc(80rem / 16);
     }
 `;
 
@@ -185,6 +222,14 @@ const Choice = styled.div`
     @media (min-width: 768px) {
         width: 60px;
         height: 60px;
+    }
+
+    @media (min-width: 1024px) {
+        width: 80px;
+        height: 80px;
+        letter-spacing: 2px;
+        font-size: 32px;
+        margin-bottom: calc(34rem / 16);
     }
 `;
 
