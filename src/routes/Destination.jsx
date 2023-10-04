@@ -134,16 +134,16 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: url(${mobileBG}) lightgray no-repeat 0px 0px / 100% 100%;
+    background: url(${mobileBG}) no-repeat 0px 0px / 100% 100%;
     mix-blend-mode: screen;
     min-height: 100vh;
 
     @media (min-width: 768px) {
-        background: url(${tabletBG}) lightgray no-repeat 0px 0px / 100% 100%;
+        background: url(${tabletBG}) no-repeat 0px 0px / 100% 100%;
     }
 
     @media (min-width: 1024px) {
-        background: url(${desktopBG}) lightgray no-repeat 0px 0px / 100% 100%;
+        background: url(${desktopBG}) no-repeat 0px 0px / 100% 100%;
         flex-direction: row;
         justify-content: center;
         padding-top: 20%;

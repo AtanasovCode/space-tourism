@@ -72,7 +72,7 @@ const Navigation = styled.nav`
 
     @media (min-width: 1024px) {
         position: absolute;
-        top: calc(40rem / 16);
+        top: 0;
         left: 0;
     }
 `;

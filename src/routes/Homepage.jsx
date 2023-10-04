@@ -97,7 +97,7 @@ const Title = styled.div`
     }
 
     @media (min-width: 1024px) {
-        font-size: 28px;
+        font-size: 18px;
         letter-spacing: 4.725px;
         text-align: left;
         width: 100%;
@@ -116,9 +116,14 @@ const Space = styled.div`
     padding: .7rem 0;
 
     @media (min-width: 768px) {
-        font-size: 150px;
-        line-height: 150px;
-        margin-bottom: calc(24rem / 16);
+        font-size: 100px;
+        line-height: 50px;
+        margin-bottom: calc(20rem / 16);
+    }
+
+    @media (min-width: 1024px) {
+        width: 100%;
+        text-align: left;
     }
 `;
 
@@ -139,7 +144,7 @@ const Subtitle = styled.div`
 
     @media (min-width: 1024px) {
         text-align: left;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 32px;
     }
 `;
@@ -165,35 +170,36 @@ const Explore = styled(Link)`
     margin-bottom: calc(48rem / 16);
 
     @media (min-width: 768px) {
-        width: calc(242rem / 16);
-        height: calc(242rem / 16);
-        font-size: 32px;
+        width: calc(142rem / 16);
+        height: calc(142rem / 16);
+        font-size: 22px;
         letter-spacing: 2px;
         bottom: calc(90rem / 16);
         z-index: 10;
     }
 
     @media (min-width: 1024px) {
-        width: calc(274rem / 16);
-        height: calc(274rem / 16);
+        width: calc(184rem / 16);
+        height: calc(184rem / 16);
         position: absolute;
         bottom: 9%;
         right: 11%;
+        font-size: 30px;
 
         &::before {
             content: '';
             position: absolute;
-            width: calc(274rem / 16);
-            height: calc(274rem / 16);
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            transition: all .3s linear;
+            transition: all .2s linear;
         }
 
         &:hover::before {
-            width: calc(450rem / 16);
-            height: calc(450rem / 16);
+            width: calc(100% + 50%);
+            height: calc(100% + 50%);
             background-color: #FFFFFF;
-            opacity: 0.1036;
+            opacity: 0.2036;
             z-index: -1;
         }
     }
